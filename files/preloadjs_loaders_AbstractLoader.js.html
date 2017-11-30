@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/css/yui-cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico">
+    <script src="../assets/js/yui-source.js"></script>
+	<title>PreloadJS v1.0.0 API Documentation : preloadjs/loaders/AbstractLoader.js</title>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><a href="http://www.createjs.com/preloadjs"><img src="../assets/docs-icon-PreloadJS.png" title="PreloadJS"></a></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Documentation for: 1.0.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/AbstractLoader.html">AbstractLoader</a></li>
+            
+                <li><a href="../classes/AbstractMediaLoader.html">AbstractMediaLoader</a></li>
+            
+                <li><a href="../classes/AbstractRequest.html">AbstractRequest</a></li>
+            
+                <li><a href="../classes/BinaryLoader.html">BinaryLoader</a></li>
+            
+                <li><a href="../classes/CSSLoader.html">CSSLoader</a></li>
+            
+                <li><a href="../classes/DataUtils.html">DataUtils</a></li>
+            
+                <li><a href="../classes/DomUtils.html">DomUtils</a></li>
+            
+                <li><a href="../classes/ErrorEvent.html">ErrorEvent</a></li>
+            
+                <li><a href="../classes/Event.html">Event</a></li>
+            
+                <li><a href="../classes/EventDispatcher.html">EventDispatcher</a></li>
+            
+                <li><a href="../classes/FontLoader.html">FontLoader</a></li>
+            
+                <li><a href="../classes/ImageLoader.html">ImageLoader</a></li>
+            
+                <li><a href="../classes/JavaScriptLoader.html">JavaScriptLoader</a></li>
+            
+                <li><a href="../classes/JSONLoader.html">JSONLoader</a></li>
+            
+                <li><a href="../classes/JSONPLoader.html">JSONPLoader</a></li>
+            
+                <li><a href="../classes/LoadItem.html">LoadItem</a></li>
+            
+                <li><a href="../classes/LoadQueue.html">LoadQueue</a></li>
+            
+                <li><a href="../classes/ManifestLoader.html">ManifestLoader</a></li>
+            
+                <li><a href="../classes/MediaTagRequest.html">MediaTagRequest</a></li>
+            
+                <li><a href="../classes/PreloadJS.html">PreloadJS</a></li>
+            
+                <li><a href="../classes/ProgressEvent.html">ProgressEvent</a></li>
+            
+                <li><a href="../classes/RequestUtils.html">RequestUtils</a></li>
+            
+                <li><a href="../classes/SamplePlugin.html">SamplePlugin</a></li>
+            
+                <li><a href="../classes/SoundLoader.html">SoundLoader</a></li>
+            
+                <li><a href="../classes/SpriteSheetLoader.html">SpriteSheetLoader</a></li>
+            
+                <li><a href="../classes/SVGLoader.html">SVGLoader</a></li>
+            
+                <li><a href="../classes/TagRequest.html">TagRequest</a></li>
+            
+                <li><a href="../classes/TextLoader.html">TextLoader</a></li>
+            
+                <li><a href="../classes/URLUtils.html">URLUtils</a></li>
+            
+                <li><a href="../classes/Utility Methods.html">Utility Methods</a></li>
+            
+                <li><a href="../classes/VideoLoader.html">VideoLoader</a></li>
+            
+                <li><a href="../classes/XHRRequest.html">XHRRequest</a></li>
+            
+                <li><a href="../classes/XMLLoader.html">XMLLoader</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/CreateJS.html">CreateJS</a></li>
+            
+                <li><a href="../modules/PreloadJS.html">PreloadJS</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+            <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content source-content">
+                        <script>
+	var name = preloadjs/loaders/AbstractLoader.js      
+</script>
+<h1 class="file-heading">File:AbstractLoader.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+/*
+ * AbstractLoader
+ * Visit http://createjs.com/ for documentation, updates and examples.
+ *
+ *
+ * Copyright (c) 2012 gskinner.com, inc.
+ *
+ * Permission is hereby granted, free of charge, to any person
+ * obtaining a copy of this software and associated documentation
+ * files (the &quot;Software&quot;), to deal in the Software without
+ * restriction, including without limitation the rights to use,
+ * copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the
+ * Software is furnished to do so, subject to the following
+ * conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+ * OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+ * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+ * OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+/**
+ * @module PreloadJS
+ */
+
+// namespace:
+this.createjs = this.createjs || {};
+
+(function () {
+	&quot;use strict&quot;;
+
+// constructor
+	/**
+	 * The base loader, which defines all the generic methods, properties, and events. All loaders extend this class,
+	 * including the {{#crossLink &quot;LoadQueue&quot;}}{{/crossLink}}.
+	 * @class AbstractLoader
+	 * @param {LoadItem|object|string} loadItem The item to be loaded.
+	 * @param {Boolean} [preferXHR] Determines if the LoadItem should &lt;em&gt;try&lt;/em&gt; and load using XHR, or take a
+	 * tag-based approach, which can be better in cross-domain situations. Not all loaders can load using one or the
+	 * other, so this is a suggested directive.
+	 * @param {String} [type] The type of loader. Loader types are defined as constants on the AbstractLoader class,
+	 * such as {{#crossLink &quot;IMAGE:property&quot;}}{{/crossLink}}, {{#crossLink &quot;CSS:property&quot;}}{{/crossLink}}, etc.
+	 * @extends EventDispatcher
+	 */
+	function AbstractLoader(loadItem, preferXHR, type) {
+		this.EventDispatcher_constructor();
+
+		// public properties
+		/**
+		 * If the loader has completed loading. This provides a quick check, but also ensures that the different approaches
+		 * used for loading do not pile up resulting in more than one &#x60;complete&#x60; {{#crossLink &quot;Event&quot;}}{{/crossLink}}.
+		 * @property loaded
+		 * @type {Boolean}
+		 * @default false
+		 */
+		this.loaded = false;
+
+		/**
+		 * Determine if the loader was canceled. Canceled loads will not fire complete events. Note that this property
+		 * is readonly, so {{#crossLink &quot;LoadQueue&quot;}}{{/crossLink}} queues should be closed using {{#crossLink &quot;LoadQueue/close&quot;}}{{/crossLink}}
+		 * instead.
+		 * @property canceled
+		 * @type {Boolean}
+		 * @default false
+		 * @readonly
+		 */
+		this.canceled = false;
+
+		/**
+		 * The current load progress (percentage) for this item. This will be a number between 0 and 1.
+		 *
+		 * &lt;h4&gt;Example&lt;/h4&gt;
+		 *
+		 *     var queue = new createjs.LoadQueue();
+		 *     queue.loadFile(&quot;largeImage.png&quot;);
+		 *     queue.on(&quot;progress&quot;, function() {
+		 *         console.log(&quot;Progress:&quot;, queue.progress, event.progress);
+		 *     });
+		 *
+		 * @property progress
+		 * @type {Number}
+		 * @default 0
+		 */
+		this.progress = 0;
+
+		/**
+		 * The type of item this loader will load. See {{#crossLink &quot;AbstractLoader&quot;}}{{/crossLink}} for a full list of
+		 * supported types.
+		 * @property type
+		 * @type {String}
+		 */
+		this.type = type;
+
+		/**
+		 * A formatter function that converts the loaded raw result into the final result. For example, the JSONLoader
+		 * converts a string of text into a JavaScript object. Not all loaders have a resultFormatter, and this property
+		 * can be overridden to provide custom formatting.
+		 *
+		 * Optionally, a resultFormatter can return a callback function in cases where the formatting needs to be
+		 * asynchronous, such as creating a new image. The callback function is passed 2 parameters, which are callbacks
+		 * to handle success and error conditions in the resultFormatter. Note that the resultFormatter method is
+		 * called in the current scope, as well as the success and error callbacks.
+		 *
+		 * &lt;h4&gt;Example asynchronous resultFormatter&lt;/h4&gt;
+		 *
+		 * 	function _formatResult(loader) {
+		 * 		return function(success, error) {
+		 * 			if (errorCondition) { error(errorDetailEvent); }
+		 * 			success(result);
+		 * 		}
+		 * 	}
+		 * @property resultFormatter
+		 * @type {Function}
+		 * @default null
+		 */
+		this.resultFormatter = null;
+
+		// protected properties
+		/**
+		 * The {{#crossLink &quot;LoadItem&quot;}}{{/crossLink}} this loader represents. Note that this is null in a {{#crossLink &quot;LoadQueue&quot;}}{{/crossLink}},
+		 * but will be available on loaders such as {{#crossLink &quot;XMLLoader&quot;}}{{/crossLink}} and {{#crossLink &quot;ImageLoader&quot;}}{{/crossLink}}.
+		 * @property _item
+		 * @type {LoadItem|Object}
+		 * @private
+		 */
+		if (loadItem) {
+			this._item = createjs.LoadItem.create(loadItem);
+		} else {
+			this._item = null;
+		}
+
+		/**
+		 * Whether the loader will try and load content using XHR (true) or HTML tags (false).
+		 * @property _preferXHR
+		 * @type {Boolean}
+		 * @private
+		 */
+		this._preferXHR = preferXHR;
+
+		/**
+		 * The loaded result after it is formatted by an optional {{#crossLink &quot;resultFormatter&quot;}}{{/crossLink}}. For
+		 * items that are not formatted, this will be the same as the {{#crossLink &quot;_rawResult:property&quot;}}{{/crossLink}}.
+		 * The result is accessed using the {{#crossLink &quot;getResult&quot;}}{{/crossLink}} method.
+		 * @property _result
+		 * @type {Object|String}
+		 * @private
+		 */
+		this._result = null;
+
+		/**
+		 * The loaded result before it is formatted. The rawResult is accessed using the {{#crossLink &quot;getResult&quot;}}{{/crossLink}}
+		 * method, and passing &#x60;true&#x60;.
+		 * @property _rawResult
+		 * @type {Object|String}
+		 * @private
+		 */
+		this._rawResult = null;
+
+		/**
+		 * A list of items that loaders load behind the scenes. This does not include the main item the loader is
+		 * responsible for loading. Examples of loaders that have sub-items include the {{#crossLink &quot;SpriteSheetLoader&quot;}}{{/crossLink}} and
+		 * {{#crossLink &quot;ManifestLoader&quot;}}{{/crossLink}}.
+		 * @property _loadItems
+		 * @type {null}
+		 * @protected
+		 */
+		this._loadedItems = null;
+
+		/**
+		 * The attribute the items loaded using tags use for the source.
+		 * @type {string}
+		 * @default null
+		 * @private
+		 */
+		this._tagSrcAttribute = null;
+
+		/**
+		 * An HTML tag (or similar) that a loader may use to load HTML content, such as images, scripts, etc.
+		 * @property _tag
+		 * @type {Object}
+		 * @private
+		 */
+		this._tag = null;
+	};
+
+	var p = createjs.extend(AbstractLoader, createjs.EventDispatcher);
+	var s = AbstractLoader;
+
+	// Remove these @deprecated properties after 1.0
+	try {
+		Object.defineProperties(s, {
+			POST: { get: createjs.deprecate(function() { return createjs.Methods.POST; }, &quot;AbstractLoader.POST&quot;) },
+			GET: { get: createjs.deprecate(function() { return createjs.Methods.GET; }, &quot;AbstractLoader.GET&quot;) },
+
+			BINARY: { get: createjs.deprecate(function() { return createjs.Types.BINARY; }, &quot;AbstractLoader.BINARY&quot;) },
+			CSS: { get: createjs.deprecate(function() { return createjs.Types.CSS; }, &quot;AbstractLoader.CSS&quot;) },
+			FONT: { get: createjs.deprecate(function() { return createjs.Types.FONT; }, &quot;AbstractLoader.FONT&quot;) },
+			FONTCSS: { get: createjs.deprecate(function() { return createjs.Types.FONTCSS; }, &quot;AbstractLoader.FONTCSS&quot;) },
+			IMAGE: { get: createjs.deprecate(function() { return createjs.Types.IMAGE; }, &quot;AbstractLoader.IMAGE&quot;) },
+			JAVASCRIPT: { get: createjs.deprecate(function() { return createjs.Types.JAVASCRIPT; }, &quot;AbstractLoader.JAVASCRIPT&quot;) },
+			JSON: { get: createjs.deprecate(function() { return createjs.Types.JSON; }, &quot;AbstractLoader.JSON&quot;) },
+			JSONP: { get: createjs.deprecate(function() { return createjs.Types.JSONP; }, &quot;AbstractLoader.JSONP&quot;) },
+			MANIFEST: { get: createjs.deprecate(function() { return createjs.Types.MANIFEST; }, &quot;AbstractLoader.MANIFEST&quot;) },
+			SOUND: { get: createjs.deprecate(function() { return createjs.Types.SOUND; }, &quot;AbstractLoader.SOUND&quot;) },
+			VIDEO: { get: createjs.deprecate(function() { return createjs.Types.VIDEO; }, &quot;AbstractLoader.VIDEO&quot;) },
+			SPRITESHEET: { get: createjs.deprecate(function() { return createjs.Types.SPRITESHEET; }, &quot;AbstractLoader.SPRITESHEET&quot;) },
+			SVG: { get: createjs.deprecate(function() { return createjs.Types.SVG; }, &quot;AbstractLoader.SVG&quot;) },
+			TEXT: { get: createjs.deprecate(function() { return createjs.Types.TEXT; }, &quot;AbstractLoader.TEXT&quot;) },
+			XML: { get: createjs.deprecate(function() { return createjs.Types.XML; }, &quot;AbstractLoader.XML&quot;) }
+		});
+	} catch (e) {}
+
+// Events
+	/**
+	 * The {{#crossLink &quot;ProgressEvent&quot;}}{{/crossLink}} that is fired when the overall progress changes. Prior to
+	 * version 0.6.0, this was just a regular {{#crossLink &quot;Event&quot;}}{{/crossLink}}.
+	 * @event progress
+	 * @since 0.3.0
+	 */
+
+	/**
+	 * The {{#crossLink &quot;Event&quot;}}{{/crossLink}} that is fired when a load starts.
+	 * @event loadstart
+	 * @param {Object} target The object that dispatched the event.
+	 * @param {String} type The event type.
+	 * @since 0.3.1
+	 */
+
+	/**
+	 * The {{#crossLink &quot;Event&quot;}}{{/crossLink}} that is fired when the entire queue has been loaded.
+	 * @event complete
+	 * @param {Object} target The object that dispatched the event.
+	 * @param {String} type The event type.
+	 * @since 0.3.0
+	 */
+
+	/**
+	 * The {{#crossLink &quot;ErrorEvent&quot;}}{{/crossLink}} that is fired when the loader encounters an error. If the error was
+	 * encountered by a file, the event will contain the item that caused the error. Prior to version 0.6.0, this was
+	 * just a regular {{#crossLink &quot;Event&quot;}}{{/crossLink}}.
+	 * @event error
+	 * @since 0.3.0
+	 */
+
+	/**
+	 * The {{#crossLink &quot;Event&quot;}}{{/crossLink}} that is fired when the loader encounters an internal file load error.
+	 * This enables loaders to maintain internal queues, and surface file load errors.
+	 * @event fileerror
+	 * @param {Object} target The object that dispatched the event.
+	 * @param {String} type The event type (&quot;fileerror&quot;)
+	 * @param {LoadItem|object} The item that encountered the error
+	 * @since 0.6.0
+	 */
+
+	/**
+	 * The {{#crossLink &quot;Event&quot;}}{{/crossLink}} that is fired when a loader internally loads a file. This enables
+	 * loaders such as {{#crossLink &quot;ManifestLoader&quot;}}{{/crossLink}} to maintain internal {{#crossLink &quot;LoadQueue&quot;}}{{/crossLink}}s
+	 * and notify when they have loaded a file. The {{#crossLink &quot;LoadQueue&quot;}}{{/crossLink}} class dispatches a
+	 * slightly different {{#crossLink &quot;LoadQueue/fileload:event&quot;}}{{/crossLink}} event.
+	 * @event fileload
+	 * @param {Object} target The object that dispatched the event.
+	 * @param {String} type The event type (&quot;fileload&quot;)
+	 * @param {Object} item The file item which was specified in the {{#crossLink &quot;LoadQueue/loadFile&quot;}}{{/crossLink}}
+	 * or {{#crossLink &quot;LoadQueue/loadManifest&quot;}}{{/crossLink}} call. If only a string path or tag was specified, the
+	 * object will contain that value as a &#x60;src&#x60; property.
+	 * @param {Object} result The HTML tag or parsed result of the loaded item.
+	 * @param {Object} rawResult The unprocessed result, usually the raw text or binary data before it is converted
+	 * to a usable object.
+	 * @since 0.6.0
+	 */
+
+	/**
+	 * The {{#crossLink &quot;Event&quot;}}{{/crossLink}} that is fired after the internal request is created, but before a load.
+	 * This allows updates to the loader for specific loading needs, such as binary or XHR image loading.
+	 * @event initialize
+	 * @param {Object} target The object that dispatched the event.
+	 * @param {String} type The event type (&quot;initialize&quot;)
+	 * @param {AbstractLoader} loader The loader that has been initialized.
+	 */
+
+
+	/**
+	 * Get a reference to the manifest item that is loaded by this loader. In some cases this will be the value that was
+	 * passed into {{#crossLink &quot;LoadQueue&quot;}}{{/crossLink}} using {{#crossLink &quot;LoadQueue/loadFile&quot;}}{{/crossLink}} or
+	 * {{#crossLink &quot;LoadQueue/loadManifest&quot;}}{{/crossLink}}. However if only a String path was passed in, then it will
+	 * be a {{#crossLink &quot;LoadItem&quot;}}{{/crossLink}}.
+	 * @method getItem
+	 * @return {Object} The manifest item that this loader is responsible for loading.
+	 * @since 0.6.0
+	 */
+	p.getItem = function () {
+		return this._item;
+	};
+
+	/**
+	 * Get a reference to the content that was loaded by the loader (only available after the {{#crossLink &quot;complete:event&quot;}}{{/crossLink}}
+	 * event is dispatched.
+	 * @method getResult
+	 * @param {Boolean} [raw=false] Determines if the returned result will be the formatted content, or the raw loaded
+	 * data (if it exists).
+	 * @return {Object}
+	 * @since 0.6.0
+	 */
+	p.getResult = function (raw) {
+		return raw ? this._rawResult : this._result;
+	};
+
+	/**
+	 * Return the &#x60;tag&#x60; this object creates or uses for loading.
+	 * @method getTag
+	 * @return {Object} The tag instance
+	 * @since 0.6.0
+	 */
+	p.getTag = function () {
+		return this._tag;
+	};
+
+	/**
+	 * Set the &#x60;tag&#x60; this item uses for loading.
+	 * @method setTag
+	 * @param {Object} tag The tag instance
+	 * @since 0.6.0
+	 */
+	p.setTag = function(tag) {
+	  this._tag = tag;
+	};
+
+	/**
+	 * Begin loading the item. This method is required when using a loader by itself.
+	 *
+	 * &lt;h4&gt;Example&lt;/h4&gt;
+	 *
+	 *      var queue = new createjs.LoadQueue();
+	 *      queue.on(&quot;complete&quot;, handleComplete);
+	 *      queue.loadManifest(fileArray, false); // Note the 2nd argument that tells the queue not to start loading yet
+	 *      queue.load();
+	 *
+	 * @method load
+	 */
+	p.load = function () {
+		this._createRequest();
+
+		this._request.on(&quot;complete&quot;, this, this);
+		this._request.on(&quot;progress&quot;, this, this);
+		this._request.on(&quot;loadStart&quot;, this, this);
+		this._request.on(&quot;abort&quot;, this, this);
+		this._request.on(&quot;timeout&quot;, this, this);
+		this._request.on(&quot;error&quot;, this, this);
+
+		var evt = new createjs.Event(&quot;initialize&quot;);
+		evt.loader = this._request;
+		this.dispatchEvent(evt);
+
+		this._request.load();
+	};
+
+	/**
+	 * Close the the item. This will stop any open requests (although downloads using HTML tags may still continue in
+	 * the background), but events will not longer be dispatched.
+	 * @method cancel
+	 */
+	p.cancel = function () {
+		this.canceled = true;
+		this.destroy();
+	};
+
+	/**
+	 * Clean up the loader.
+	 * @method destroy
+	 */
+	p.destroy = function() {
+		if (this._request) {
+			this._request.removeAllEventListeners();
+			this._request.destroy();
+		}
+
+		this._request = null;
+
+		this._item = null;
+		this._rawResult = null;
+		this._result = null;
+
+		this._loadItems = null;
+
+		this.removeAllEventListeners();
+	};
+
+	/**
+	 * Get any items loaded internally by the loader. The enables loaders such as {{#crossLink &quot;ManifestLoader&quot;}}{{/crossLink}}
+	 * to expose items it loads internally.
+	 * @method getLoadedItems
+	 * @return {Array} A list of the items loaded by the loader.
+	 * @since 0.6.0
+	 */
+	p.getLoadedItems = function () {
+		return this._loadedItems;
+	};
+
+
+	// Private methods
+	/**
+	 * Create an internal request used for loading. By default, an {{#crossLink &quot;XHRRequest&quot;}}{{/crossLink}} or
+	 * {{#crossLink &quot;TagRequest&quot;}}{{/crossLink}} is created, depending on the value of {{#crossLink &quot;preferXHR:property&quot;}}{{/crossLink}}.
+	 * Other loaders may override this to use different request types, such as {{#crossLink &quot;ManifestLoader&quot;}}{{/crossLink}},
+	 * which uses {{#crossLink &quot;JSONLoader&quot;}}{{/crossLink}} or {{#crossLink &quot;JSONPLoader&quot;}}{{/crossLink}} under the hood.
+	 * @method _createRequest
+	 * @protected
+	 */
+	p._createRequest = function() {
+		if (!this._preferXHR) {
+			this._request = new createjs.TagRequest(this._item, this._tag || this._createTag(), this._tagSrcAttribute);
+		} else {
+			this._request = new createjs.XHRRequest(this._item);
+		}
+	};
+
+	/**
+	 * Create the HTML tag used for loading. This method does nothing by default, and needs to be implemented
+	 * by loaders that require tag loading.
+	 * @method _createTag
+	 * @param {String} src The tag source
+	 * @return {HTMLElement} The tag that was created
+	 * @protected
+	 */
+	p._createTag = function(src) { return null; };
+
+	/**
+	 * Dispatch a loadstart {{#crossLink &quot;Event&quot;}}{{/crossLink}}. Please see the {{#crossLink &quot;AbstractLoader/loadstart:event&quot;}}{{/crossLink}}
+	 * event for details on the event payload.
+	 * @method _sendLoadStart
+	 * @protected
+	 */
+	p._sendLoadStart = function () {
+		if (this._isCanceled()) { return; }
+		this.dispatchEvent(&quot;loadstart&quot;);
+	};
+
+	/**
+	 * Dispatch a {{#crossLink &quot;ProgressEvent&quot;}}{{/crossLink}}.
+	 * @method _sendProgress
+	 * @param {Number | Object} value The progress of the loaded item, or an object containing &lt;code&gt;loaded&lt;/code&gt;
+	 * and &lt;code&gt;total&lt;/code&gt; properties.
+	 * @protected
+	 */
+	p._sendProgress = function (value) {
+		if (this._isCanceled()) { return; }
+		var event = null;
+		if (typeof(value) == &quot;number&quot;) {
+			this.progress = value;
+			event = new createjs.ProgressEvent(this.progress);
+		} else {
+			event = value;
+			this.progress = value.loaded / value.total;
+			event.progress = this.progress;
+			if (isNaN(this.progress) || this.progress == Infinity) { this.progress = 0; }
+		}
+		this.hasEventListener(&quot;progress&quot;) &amp;&amp; this.dispatchEvent(event);
+	};
+
+	/**
+	 * Dispatch a complete {{#crossLink &quot;Event&quot;}}{{/crossLink}}. Please see the {{#crossLink &quot;AbstractLoader/complete:event&quot;}}{{/crossLink}} event
+	 * @method _sendComplete
+	 * @protected
+	 */
+	p._sendComplete = function () {
+		if (this._isCanceled()) { return; }
+
+		this.loaded = true;
+
+		var event = new createjs.Event(&quot;complete&quot;);
+		event.rawResult = this._rawResult;
+
+		if (this._result != null) {
+			event.result = this._result;
+		}
+
+		this.dispatchEvent(event);
+	};
+
+	/**
+	 * Dispatch an error {{#crossLink &quot;Event&quot;}}{{/crossLink}}. Please see the {{#crossLink &quot;AbstractLoader/error:event&quot;}}{{/crossLink}}
+	 * event for details on the event payload.
+	 * @method _sendError
+	 * @param {ErrorEvent} event The event object containing specific error properties.
+	 * @protected
+	 */
+	p._sendError = function (event) {
+		if (this._isCanceled() || !this.hasEventListener(&quot;error&quot;)) { return; }
+		if (event == null) {
+			event = new createjs.ErrorEvent(&quot;PRELOAD_ERROR_EMPTY&quot;); // TODO: Populate error
+		}
+		this.dispatchEvent(event);
+	};
+
+	/**
+	 * Determine if the load has been canceled. This is important to ensure that method calls or asynchronous events
+	 * do not cause issues after the queue has been cleaned up.
+	 * @method _isCanceled
+	 * @return {Boolean} If the loader has been canceled.
+	 * @protected
+	 */
+	p._isCanceled = function () {
+		if (window.createjs == null || this.canceled) {
+			return true;
+		}
+		return false;
+	};
+
+	/**
+	 * A custom result formatter function, which is called just before a request dispatches its complete event. Most
+	 * loader types already have an internal formatter, but this can be user-overridden for custom formatting. The
+	 * formatted result will be available on Loaders using {{#crossLink &quot;getResult&quot;}}{{/crossLink}}, and passing &#x60;true&#x60;.
+	 * @property resultFormatter
+	 * @type Function
+	 * @return {Object} The formatted result
+	 * @since 0.6.0
+	 */
+	p.resultFormatter = null;
+
+	/**
+	 * Handle events from internal requests. By default, loaders will handle, and redispatch the necessary events, but
+	 * this method can be overridden for custom behaviours.
+	 * @method handleEvent
+	 * @param {Event} event The event that the internal request dispatches.
+	 * @protected
+	 * @since 0.6.0
+	 */
+	p.handleEvent = function (event) {
+		switch (event.type) {
+			case &quot;complete&quot;:
+				this._rawResult = event.target._response;
+				var result = this.resultFormatter &amp;&amp; this.resultFormatter(this);
+				// The resultFormatter is asynchronous
+				if (result instanceof Function) {
+					result.call(this,
+							createjs.proxy(this._resultFormatSuccess, this),
+							createjs.proxy(this._resultFormatFailed, this)
+					);
+				// The result formatter is synchronous
+				} else {
+					this._result =  result || this._rawResult;
+					this._sendComplete();
+				}
+				break;
+			case &quot;progress&quot;:
+				this._sendProgress(event);
+				break;
+			case &quot;error&quot;:
+				this._sendError(event);
+				break;
+			case &quot;loadstart&quot;:
+				this._sendLoadStart();
+				break;
+			case &quot;abort&quot;:
+			case &quot;timeout&quot;:
+				if (!this._isCanceled()) {
+					this.dispatchEvent(new createjs.ErrorEvent(&quot;PRELOAD_&quot; + event.type.toUpperCase() + &quot;_ERROR&quot;));
+				}
+				break;
+		}
+	};
+
+	/**
+	 * The &quot;success&quot; callback passed to {{#crossLink &quot;AbstractLoader/resultFormatter&quot;}}{{/crossLink}} asynchronous
+	 * functions.
+	 * @method _resultFormatSuccess
+	 * @param {Object} result The formatted result
+	 * @private
+	 */
+	p._resultFormatSuccess = function (result) {
+		this._result = result;
+		this._sendComplete();
+	};
+
+	/**
+	 * The &quot;error&quot; callback passed to {{#crossLink &quot;AbstractLoader/resultFormatter&quot;}}{{/crossLink}} asynchronous
+	 * functions.
+	 * @method _resultFormatSuccess
+	 * @param {Object} error The error event
+	 * @private
+	 */
+	p._resultFormatFailed = function (event) {
+		this._sendError(event);
+	};
+
+	/**
+	 * @method toString
+	 * @return {String} a string representation of the instance.
+	 */
+	p.toString = function () {
+		return &quot;[PreloadJS AbstractLoader]&quot;;
+	};
+
+	createjs.AbstractLoader = createjs.promote(AbstractLoader, &quot;EventDispatcher&quot;);
+
+}());
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../assets/css/yui-cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico">
+    <script src="../assets/js/yui-source.js"></script>
+	<title>PreloadJS v1.0.0 API Documentation : ProgressEvent</title>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><a href="http://www.createjs.com/preloadjs"><img src="../assets/docs-icon-PreloadJS.png" title="PreloadJS"></a></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Documentation for: 1.0.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/AbstractLoader.html">AbstractLoader</a></li>
+            
+                <li><a href="../classes/AbstractMediaLoader.html">AbstractMediaLoader</a></li>
+            
+                <li><a href="../classes/AbstractRequest.html">AbstractRequest</a></li>
+            
+                <li><a href="../classes/BinaryLoader.html">BinaryLoader</a></li>
+            
+                <li><a href="../classes/CSSLoader.html">CSSLoader</a></li>
+            
+                <li><a href="../classes/DataUtils.html">DataUtils</a></li>
+            
+                <li><a href="../classes/DomUtils.html">DomUtils</a></li>
+            
+                <li><a href="../classes/ErrorEvent.html">ErrorEvent</a></li>
+            
+                <li><a href="../classes/Event.html">Event</a></li>
+            
+                <li><a href="../classes/EventDispatcher.html">EventDispatcher</a></li>
+            
+                <li><a href="../classes/FontLoader.html">FontLoader</a></li>
+            
+                <li><a href="../classes/ImageLoader.html">ImageLoader</a></li>
+            
+                <li><a href="../classes/JavaScriptLoader.html">JavaScriptLoader</a></li>
+            
+                <li><a href="../classes/JSONLoader.html">JSONLoader</a></li>
+            
+                <li><a href="../classes/JSONPLoader.html">JSONPLoader</a></li>
+            
+                <li><a href="../classes/LoadItem.html">LoadItem</a></li>
+            
+                <li><a href="../classes/LoadQueue.html">LoadQueue</a></li>
+            
+                <li><a href="../classes/ManifestLoader.html">ManifestLoader</a></li>
+            
+                <li><a href="../classes/MediaTagRequest.html">MediaTagRequest</a></li>
+            
+                <li><a href="../classes/PreloadJS.html">PreloadJS</a></li>
+            
+                <li><a href="../classes/ProgressEvent.html">ProgressEvent</a></li>
+            
+                <li><a href="../classes/RequestUtils.html">RequestUtils</a></li>
+            
+                <li><a href="../classes/SamplePlugin.html">SamplePlugin</a></li>
+            
+                <li><a href="../classes/SoundLoader.html">SoundLoader</a></li>
+            
+                <li><a href="../classes/SpriteSheetLoader.html">SpriteSheetLoader</a></li>
+            
+                <li><a href="../classes/SVGLoader.html">SVGLoader</a></li>
+            
+                <li><a href="../classes/TagRequest.html">TagRequest</a></li>
+            
+                <li><a href="../classes/TextLoader.html">TextLoader</a></li>
+            
+                <li><a href="../classes/URLUtils.html">URLUtils</a></li>
+            
+                <li><a href="../classes/Utility Methods.html">Utility Methods</a></li>
+            
+                <li><a href="../classes/VideoLoader.html">VideoLoader</a></li>
+            
+                <li><a href="../classes/XHRRequest.html">XHRRequest</a></li>
+            
+                <li><a href="../classes/XMLLoader.html">XMLLoader</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+                <li><a href="../modules/CreateJS.html">CreateJS</a></li>
+            
+                <li><a href="../modules/PreloadJS.html">PreloadJS</a></li>
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+            <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1>ProgressEvent Class</h1>
+<div class="box meta">
+    
+
+    
+
+    
+        <div class="foundat">
+            Defined in: <a href="../files/preloadjs_events_ProgressEvent.js.html#l41"><code>ProgressEvent:41</code></a>
+        </div>
+    
+
+    
+        
+            Module: <a href="../modules/PreloadJS.html">PreloadJS</a>
+        
+    
+
+    
+</div>
+
+
+
+<div class="box intro">
+    <p>A CreateJS <a href="../classes/Event.html" class="crosslink">Event</a> that is dispatched when progress changes.</p>
+
+</div>
+
+
+    <div class="constructor">
+        <h2>Constructor</h2>
+        <div id="method_ProgressEvent" class="method item">
+    <h3 class="name"><code>ProgressEvent</code></h3>
+
+    
+        <div class="args">
+            <span class="paren">(</span><ul class="args-list inline commas">
+            
+                <li class="arg">
+                    
+                        <code>loaded</code>
+                    
+                </li>
+            
+                <li class="arg">
+                    
+                        <code class="optional">[total=1]</code>
+                    
+                </li>
+            
+            </ul><span class="paren">)</span>
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_events_ProgressEvent.js.html#l41"><code>ProgressEvent:41</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        
+    </div>
+
+    
+        <div class="params">
+            <h4>Parameters:</h4>
+
+            <ul class="params-list">
+            
+                <li class="param">
+                    
+                        <code class="param-name">loaded</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The amount that has been loaded. This can be any number relative to the total.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+                <li class="param">
+                    
+                        <code class="param-name optional">[total=1]</code>
+                        <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+                        <span class="flag optional" title="This parameter is optional.">optional</span>
+                    
+
+                    
+
+                    <div class="param-description">
+                        <p>The total amount that will load. This will default to 1, so if the <code>loaded</code> value is
+a percentage (between 0 and 1), it can be omitted.</p>
+
+                    </div>
+
+                    
+                </li>
+            
+            </ul>
+        </div>
+    
+
+    
+
+    
+</div>
+
+    </div>
+
+
+<div id="classdocs" class="tabview">
+    <ul class="api-class-tabs">
+        <li class="api-class-tab index"><a href="#index">Index</a></li>
+
+        
+            <li class="api-class-tab methods"><a href="#methods">Methods</a></li>
+        
+        
+            <li class="api-class-tab properties"><a href="#properties">Properties</a></li>
+        
+        
+        
+    </ul>
+
+    <div>
+        <div id="index" class="api-class-tabpanel index">
+            <h2 class="off-left">Item Index</h2>
+
+            
+                <div class="index-section methods">
+                    <h3>Methods</h3>
+
+                    <ul class="index-list methods">
+                        
+                            <li class="index-item method">
+                                <a href="#method_clone">clone</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+                <div class="index-section properties">
+                    <h3>Properties</h3>
+
+                    <ul class="index-list properties">
+                        
+                            <li class="index-item property">
+                                <a href="#property_BINARY">BINARY</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_CSS">CSS</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_FONT">FONT</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_FONTCSS">FONTCSS</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_GET">GET</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_IMAGE">IMAGE</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_JAVASCRIPT">JAVASCRIPT</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_JSON">JSON</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_JSONP">JSONP</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_loaded">loaded</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_MANIFEST">MANIFEST</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_POST">POST</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_progress">progress</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_SOUND">SOUND</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_SPRITESHEET">SPRITESHEET</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_SVG">SVG</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_TEXT">TEXT</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_total">total</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_VIDEO">VIDEO</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#property_XML">XML</a>
+
+                                
+                                    <span class="flag static">static</span>
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                </div>
+            
+
+            
+
+            
+        </div>
+
+        
+            <div id="methods" class="api-class-tabpanel">
+                <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method_clone" class="method item">
+    <h3 class="name"><code>clone</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+        <span class="returns-inline">
+            <span class="type"><a href="../classes/ProgressEvent.html" class="crosslink">ProgressEvent</a></span>
+        </span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_events_ProgressEvent.js.html#l79"><code>clone:79</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Returns a clone of the ProgressEvent instance.</p>
+
+    </div>
+
+    
+
+    
+        <div class="returns">
+            <h4>Returns:</h4>
+
+            <div class="returns-description">
+                
+                    
+                        <span class="type"><a href="../classes/ProgressEvent.html" class="crosslink">ProgressEvent</a></span>:
+                    
+                    <p>a clone of the Event instance.</p>
+
+                
+            </div>
+        </div>
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+            <div id="properties" class="api-class-tabpanel">
+                <h2 class="off-left">Properties</h2>
+
+                
+                    <div id="property_BINARY" class="property item">
+    <h3 class="name"><code>BINARY</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_data_Types.js.html#l7"><code>BINARY:7</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.6.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>The preload type for generic binary types. Note that images are loaded as binary files when using XHR.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> binary</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_CSS" class="property item">
+    <h3 class="name"><code>CSS</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_data_Types.js.html#l17"><code>CSS:17</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.6.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>The preload type for css files. CSS files are loaded using a &lt;link&gt; when loaded with XHR, or a
+&lt;style&gt; tag when loaded with tags.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> css</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_FONT" class="property item">
+    <h3 class="name"><code>FONT</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_data_Types.js.html#l28"><code>FONT:28</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.9.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>The preload type for font files.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> font</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_FONTCSS" class="property item">
+    <h3 class="name"><code>FONTCSS</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_data_Types.js.html#l38"><code>FONTCSS:38</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.9.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>The preload type for fonts specified with CSS (such as Google fonts)</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> fontcss</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_GET" class="property item">
+    <h3 class="name"><code>GET</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_data_Methods.js.html#l16"><code>GET:16</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Defines a GET request, use for a method value when loading data.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> get</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_IMAGE" class="property item">
+    <h3 class="name"><code>IMAGE</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_data_Types.js.html#l48"><code>IMAGE:48</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.6.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>The preload type for image files, usually png, gif, or jpg/jpeg. Images are loaded into an &lt;image&gt; tag.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> image</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_JAVASCRIPT" class="property item">
+    <h3 class="name"><code>JAVASCRIPT</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_data_Types.js.html#l58"><code>JAVASCRIPT:58</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.6.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>The preload type for javascript files, usually with the "js" file extension. JavaScript files are loaded into a
+&lt;script&gt; tag.</p>
+<p>Since version 0.4.1+, due to how tag-loaded scripts work, all JavaScript files are automatically injected into
+the body of the document to maintain parity between XHR and tag-loaded scripts. In version 0.4.0 and earlier,
+only tag-loaded scripts are injected.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> javascript</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_JSON" class="property item">
+    <h3 class="name"><code>JSON</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_data_Types.js.html#l73"><code>JSON:73</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.6.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>The preload type for json files, usually with the "json" file extension. JSON data is loaded and parsed into a
+JavaScript object. Note that if a <code>callback</code> is present on the load item, the file will be loaded with JSONP,
+no matter what the LoadQueue/preferXHR:property property is set to, and the JSON
+must contain a matching wrapper function.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> json</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_JSONP" class="property item">
+    <h3 class="name"><code>JSONP</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_data_Types.js.html#l86"><code>JSONP:86</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.6.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>The preload type for jsonp files, usually with the "json" file extension. JSON data is loaded and parsed into a
+JavaScript object. You are required to pass a callback parameter that matches the function wrapper in the JSON.
+Note that JSONP will always be used if there is a callback present, no matter what the LoadQueue/preferXHR:property
+property is set to.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> jsonp</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_loaded" class="property item">
+    <h3 class="name"><code>loaded</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_events_ProgressEvent.js.html#l53"><code>loaded:53</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The amount that has been loaded (out of a total amount)</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_MANIFEST" class="property item">
+    <h3 class="name"><code>MANIFEST</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_data_Types.js.html#l99"><code>MANIFEST:99</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.6.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>The preload type for json-based manifest files, usually with the "json" file extension. The JSON data is loaded
+and parsed into a JavaScript object. PreloadJS will then look for a "manifest" property in the JSON, which is an
+Array of files to load, following the same format as the <a href="../classes/LoadQueue.html#method_loadManifest" class="crosslink">loadManifest</a>
+method. If a "callback" is specified on the manifest object, then it will be loaded using JSONP instead,
+regardless of what the LoadQueue/preferXHR:property property is set to.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> manifest</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_POST" class="property item">
+    <h3 class="name"><code>POST</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_data_Methods.js.html#l7"><code>POST:7</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>Defines a POST request, use for a method value when loading data.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> post</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_progress" class="property item">
+    <h3 class="name"><code>progress</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_events_ProgressEvent.js.html#l68"><code>progress:68</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The percentage (out of 1) that the load has been completed. This is calculated using <code>loaded/total</code>.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 0</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_SOUND" class="property item">
+    <h3 class="name"><code>SOUND</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_data_Types.js.html#l113"><code>SOUND:113</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.6.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>The preload type for sound files, usually mp3, ogg, or wav. When loading via tags, audio is loaded into an
+&lt;audio&gt; tag.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> sound</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_SPRITESHEET" class="property item">
+    <h3 class="name"><code>SPRITESHEET</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_data_Types.js.html#l135"><code>SPRITESHEET:135</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.6.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>The preload type for SpriteSheet files. SpriteSheet files are JSON files that contain string image paths.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> spritesheet</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_SVG" class="property item">
+    <h3 class="name"><code>SVG</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_data_Types.js.html#l145"><code>SVG:145</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.6.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>The preload type for SVG files.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> svg</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_TEXT" class="property item">
+    <h3 class="name"><code>TEXT</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_data_Types.js.html#l155"><code>TEXT:155</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.6.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>The preload type for text files, which is also the default file type if the type can not be determined. Text is
+loaded as raw text.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> text</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_total" class="property item">
+    <h3 class="name"><code>total</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Number" class="crosslink external" target="_blank">Number</a></span>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_events_ProgressEvent.js.html#l60"><code>total:60</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The total "size" of the load.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> 1</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_VIDEO" class="property item">
+    <h3 class="name"><code>VIDEO</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_data_Types.js.html#l124"><code>VIDEO:124</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.6.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>The preload type for video files, usually mp4, ts, or ogg. When loading via tags, video is loaded into an
+&lt;video&gt; tag.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> video</p>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_XML" class="property item">
+    <h3 class="name"><code>XML</code></h3>
+    <span class="type"><a href="https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/String" class="crosslink external" target="_blank">String</a></span>
+
+    
+
+    
+
+    
+
+    
+        <span class="flag static">static</span>
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/preloadjs_data_Types.js.html#l166"><code>XML:166</code></a>
+        
+        </p>
+
+        
+
+        
+            <p>Available since 0.6.0</p>
+        
+    </div>
+
+    <div class="description">
+        <p>The preload type for xml files. XML is loaded into an XML document.</p>
+
+    </div>
+
+    
+        <p><strong>Default:</strong> xml</p>
+    
+
+    
+
+    
+</div>
+
+                
+            </div>
+        
+
+        
+
+        
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>
